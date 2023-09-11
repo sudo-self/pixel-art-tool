@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>8-bit ART</title>
+  <link rel="preload" href="/assets/fonts/8bit-Art-Sans-subset.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/VT323-Regular-subset.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="build/make8bitart.min.css" />
+  <link rel="icon" href="/assets/favicon.png" />
+  
+  <script src="build/app.min.js" defer></script>
+
+</head>
+
+<!--
+                                             ____
+   ___                                      .-~. /_"-._
+  `-._~-.                                  / /_ "~o\  :Y
+      \  \                                / : \~x.  ` ')
+       ]  Y                              /  |  Y< ~-.__j      -------------------------
+      /   !                        _.--~T : l  l<  /.-~      /                         \
+     /   /                 ____.--~ .   ` l /~\ \<|Y   -----\  my internet is out 
+    /   /             .-~~"        /| .    ',-~\ \L|        \        
+   /   /             /     .^   \ Y~Y \.^>/l_   "--'         \________________________/
+  /   Y           .-"(  .  l__  j_j l_/ /~_.-~    .
+ Y    l          /    \  )    ~~~." / `/"~ / \.__/l_
+ |     \     _.-"      ~-{__     l  :  l._Z~-.___.--~
+ |      ~---~           /   ~~"---\_  ' __[>
+ l  .                _.^   ___     _>-y~
+  \  \     .      .-~   .-~   ~>--"  /
+   \  ~---"            /     ./  _.-'
+    "-.,_____.,_  _.--~\     _.-~
+                ~~     (   _}
+                        `. ~(
+                          )  \
+                         /,`--'~\--'
+-->
+
+<body id="gravity-and-time-are-social-constructs">
+
+<!--
+                                                          .--.__
+                                                      .~ (@)  ~~~---_
+                                                     {     `-_~,,,,,,)
+                                                     {    (_  ',       ---- haha nope
+                                                      ~    . = _',
+                                                       ~-   '.  =-'
+                                                         ~     :
+      .                                             _,.-~     ('');
+      '.                                         .-~        \  \ ;
+        ':-_                                _.--~            \  \;      _-=,.
+          ~-:-.__                       _.-~                 {  '---- _'-=,.
+             ~-._~--._             __.-~                     ~---------=,.`
+                 ~~-._~~-----~~~~~~       .+++~~~~~~~~-__   /
+                      ~-.,____           {   -     +   }  _/
+                              ~~-.______{_    _ -=\ / /_.~
+                                   :      ~--~    // /         ..-
+                                   :   / /      // /         ((
+                                   :  / /      {   `-------,. ))
+                                   :   /        ''=--------. }o
+                      .=._________,'  )                     ))
+                      )  _________ -''                     ~~
+                     / /  _ _
+                    (_.-.'O'-'.        HEADER INFO  -->
+
+  <header class="draggy" role="banner">
+    <div class="controls">
+      <button role="button" class="ui-dragger">
+        <img src="assets/draggybits/dragger.png" alt="move controls window">
+      </button>
+    </div>
+
+    <h1>8 bit ART</h1>
+    <ul id="minimized-tools-list" role="navigation"></ul>
+  </header>
+
+<!--
+                       _..--+~/@-~--.
+                   _-=~      (  .   '
+                _-~     _.--=.\ \'''' ---LETS EAT
+              _~      _-       \ \_\
+             =      _=          '--'
+            '      =                             .
+           :      :       ____                   '=_. ___
+      ___  |      ;                            ____ '~--.~.
+           ;      ;                               _____  } |
+        ___=       \ ___ __     __..-...__           ___/__/__
+           :        =_     _.-~~          ~~--.__
+      _____ \         ~-+-~                   ___~=_______
+           ~@#~~ == ...______ __ ___ _--~~--_                  SOCIAL LINKS
+-->
+
+  <section id="what" class="draggy" title="what is this?" data-title="what">
+    <div class="controls">
+      <button role="button" class="ui-dragger">
+        <img src="assets/draggybits/dragger.png" alt="move controls window">
+      </button>
+      <button role="button" class="ui-hider">
+        <img src="assets/draggybits/hider.png" alt="move controls window">
+      </button>
+    </div>
+
+    <h2>what is this?</h2>
+
+    <p>8bit ART is<a href="https://pixel.jessejesse.com">Open-Source</a>&nbsp;drawing tool<a href="https://html5.jessejesse.com">ported to the web</a>,now free at <a href="pixel.jessejesse.com">pixel.jessejesse.com</a>!</p>
+
+    <p>if you make something cool, Id love to see it<a href="https://twitter.com/ilostmyipad" target="_blank">@iLostMyipad</a></p>
+
+  </section>
+
+  <!--
+                                 .       .
+                                / `.   .' \
+                        .---.  <    > <    >  .---.
+                        |    \  \ - ~ ~ - /  /    |
+                         ~-..-~             ~-..-~
+                     \~~~\.'                    `./~~~/
+                      \__/                        \__/
+                       /                  .-    .  \
+                _._ _.-    .-~ ~-.       /       }   \/~~~/
+            _.-'q  }~     /       }     {        ;    \__/
+      --- {'__,  /      (       /      {       /      `. ,~~|   .     .
+            `''''='~~-.__(      /_      |      /- _      `..-'   \\   //
+                        / \   =/  ~~--~~{    ./|    ~-.     `-..__\\_//_.-'
+                       {   \  +\         \  =\ (        ~ - . _ _ _..---~
+                       |  | {   }         \   \_\
+                      '---.o___,'       .o___,      TECH TIME -->
+
+  <section id="toolbox" class="draggy" title="canvas/brush tools" data-title="tools">
+    <div class="controls">
+      <button role="button" class="ui-dragger">
+        <img src="assets/draggybits/dragger.png" alt="move controls window">
+      </button>
+      <button role="button" class="ui-hider">
+        <img src="assets/draggybits/hider.png" alt="move controls window">
+      </button>
+    </div>
+
+    <div id="instruments" class="inner">
+      <h2>instruments</h2>
+      <ul role="toolbar">
+        <li>
+          <button id="pencil" role="button" class="current-tool icon-button">
+            <img src="assets/pencil.png" alt="draw" />
+          </button>
+        </li>
+        <li>
+          <button id="paint" role="button" class="icon-button">
+            <img src="assets/paint.png" alt="paint/fill" />
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div id="editing" class="inner">
+      <h2>editing</h2>
+      <ul role="toolbar">
+        <li>
+          <button id="cut" role="button" class="icon-button">
+            <img src="assets/cut.png" alt="cut" />
+          </button>
+        </li>
+        <li>
+          <button id="copy" role="button" class="icon-button">
+            <img src="assets/copy.png" alt="copy" />
+          </button>
+        </li>
+        <li>
+          <button id="paste" role="button" class="icon-button">
+            <img src="assets/paste.png" alt="paste" />
+          </button>
+        </li>
+      </ul>
+
+      <ul class="instructions paste">
+        <li>click where you want the top left corner to paste.</li>
+      </ul>
+
+      <button role="button" class="text-button" id="undo" disabled="disabled">undo</button>
+      <button role="button" class="text-button" id="redo" disabled="disabled">redo</button>
+      <button role="button" class="text-button" id="new-canvas">new canvas</button>
+    </div>
+
+    <div id="size" class="inner">
+      <h2>brush size</h2>
+      <input id="pixel-size" class="pixel-size-input" type="number" min="2" max="100" step="1" value="15" />
+      <input id="pixel-size-slider" class="pixel-size-input" type="range" min="2" max="100" step="1" value="15" />
+      <div id="pixel-size-demo" class="color-demo"> </div>
+    </div>
+  </section>
+
+  <!--
+                                     _..-=~=-._
+                                 _.-~'          ~.
+                     __..---~~~~~                 ~.
+                _.-~~                      _.._     ~.
+            _ -~_                         /    \      ;
+           ( ` '@)                       {      |      :
+           /                             |      |      :
+          /     /}         (  )          |      |     .-  --- 
+         /     //-=-~-_-_  |  |          \      ;    .'        
+        /     //     | =._-|  }/ / / /_.==\     ; _.'   *
+       ( oo  //|     = )  ~| /.__..-='|    \    :'     **
+        ====||*|    / /    + )    \   |_.-~`\   :      |**
+           |*| *   / /    / /      \  |     ([ ])     /|||(
+       *    |*    /_/    / /       (  ]     `/ \'     /|||_
+      **(*   |   (((|   /_/      __/_/__    -| |--    _|_|__
+      *|\|             (((|      -----     __|_|__
+   _/(h8rs)|__            '''                 -----
+     _||_|__              FILE BOX -->
+
+  <section id="filebox" class="draggy" title="import/save" data-title="import-save">
+    <div class="controls">
+      <button role="button" class="ui-dragger">
+        <img src="assets/draggybits/dragger.png" alt="move controls window">
+      </button>
+      <button role="button" class="ui-hider">
+        <img src="assets/draggybits/hider.png" alt="move controls window">
+      </button>
+    </div>
+
+    <div id="import" class="inner">
+      <h2>import art</h2>
+
+      <label for="open-local" class="local" id="open-local-form">
+        from local storage:
+        <button role="button" class="text-button" id="open-local">import local art</button>
+      </label>
+
+      <label for="import-pxon" class="pxon" id="import-pxon-form">
+        import <a href="https://jennmoney.biz/pxon">pxon</a>:
+        <input type="file" id="import-pxon" name="import-pxon" />
+      </label>
+    </div>
+
+    <div id="export">
+      <h2>export art</h2>
+
+      <label for="save-png" class="png" id="save-png-form">
+        to png:<br />
+        <button role="button" class="text-button" id="save-full">full page</button>
+        <button role="button" class="text-button" id="save-selection">selection</button>
+      </label>
+
+      <label for="save-local" class="local" id="save-local-form">
+        to local storage:<br />
+        <button role="button" class="text-button local" id="save-local">local store</button>
+      </label>
+
+      <label for="export-pxon" class="pxon" id="export-pxon-form">
+        export <a href="https://jennmoney.biz/pxon">pxon</a>:<br />
+        <button role="button" class="text-button pxon" id="export-pxon" >export pxon</button>
+      </label>
+    </div>
+
+    <ul class="instructions save">
+      <li>click and drag to select the area of the canvas you want to save.</li>
+    </ul>
+  </section>
+
+  <!--
+                               <\              _
+                                \\          _/{
+                         _       \\       _-   -_
+                       /{        / `\   _-     - -_
+                     _~  =      ( @  \ -        -  -_
+                   _- -   ~-_   \( =\ \           -  -_
+                 _~  -       ~_ | 1 :\ \      _-~-_ -  -_
+               _-   -          ~  |V: \ \  _-~     ~-_-  -_
+            _-~   -            /  | :  \ \            ~-_- -_
+         _-~    -   _.._      {   | : _-``               ~- _-_
+      _-~   -__..--~    ~-_  {   : \:}    --- hi h8rs
+    =~__.--~~              ~-_\  :  /
+                               \ : /__
+                              //`Y'--\\
+                             <+       \\
+                              \\      WWW
+                              MMM        COLORBOX -->
+
+  <section id="colorbox" class="draggy" title="color tools" data-title="colors">
+    <div class="controls">
+      <button role="button" class="ui-dragger">
+        <img src="assets/draggybits/dragger.png" alt="move controls window">
+      </button>
+      <button role="button" class="ui-hider">
+        <img src="assets/draggybits/hider.png" alt="move controls window">
+      </button>
+    </div>
+
+    <div class="tabs" role="navigation">
+        <button role="button" class="pickers active" data-href="#pickers">color pickers</button>
+        <button role="button" class="palettes" data-href="#custom-palettes">history/custom palettes</button>
+    </div>
+
+    <div id="pickers">
+      <div id="hex-picker">
+        <h2>hex value:</h2>
+        <span class="pound">#</span><input type="text" id="hex-color" value="000000" autocomplete="off" autocorrect="off" spellcheck="false" />
+
+        <button role="button" id="color-dropper" class="icon-button">
+          <img src="assets/dropper.png" alt="color dropper" />
+        </button>
+      </div>
+
+      <ul class="colors clearfix">
+        <li><button role="button" class="button color primary cyan" title="cyan" data-color="rgba(0, 255, 255, 1)"> </button></li>
+        <li><button role="button" class="button color primary magenta" title="magenta" data-color="rgba(255, 0, 255, 1)"> </button></li>
+        <li><button role="button" class="button color primary yellow" title="yellow" data-color="rgba(255, 255, 0, 1)"> </button></li>
+        <li><button role="button" class="button color primary black" title="black" data-color="rgba(0, 0, 0, 1)"> </button></li>
+        <li><button role="button" class="button color primary gray" title="gray" data-color="rgba(128, 128, 128, 1)"> </button></li>
+        <li><button role="button" class="button color primary white" title="white" data-color="rgba(255, 255, 255, 1)"> </button></li>
+        <li><button role="button" class="button color transparent" title="erase" data-color="rgba(0, 0, 0, 0)"> </button></li>
+      </ul>
+
+      <div id="eight-bit-picker">
+        <h2 class="eightbit">click to pick:</h2>
+        <canvas id="eight-bit-colors" width="195" height="195"></canvas>
+        <div class="color-demo eightbit"></div>
+      </div>
+    </div>
+
+    <div id="custom-palettes">
+      <div id="color-history" class="inner">
+        <h2 class="color-history-label">history:</h2>
+        <ul class="color-history-list colors clearfix"></ul>
+        <div id="color-history-tools">
+          <button role="button" class="text-button clear">clear history</button>
+        </div>
+      </div>
+
+      <div id="color-custom" class="palettes inner">
+        <h2 class="color-upload-label">custom palette:</h2>
+        <ul class="color-custom-list colors clearfix"></ul>
+        <div id="color-custom-tools">
+          <p>Upload file in "name,hex" csv format, like in <a href="assets/example.csv">example.csv</a>!</p>
+
+          <input type="file" name="upload-palette" class="import" />
+          <button role="button" class="text-button clear">clear palette</button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="save-modal-container" class="modal hidden">
+    <div id="save-modal" class="inside-modal">
+      <div class="controls">
+        <button role="button" class="ui-hider">
+          <img src="assets/draggybits/hider.png" alt="move controls window">
+        </button>
+      </div>
+      <h2>you saved your art!</h2>
+      <a href="#" target="_blank" download="art.png"><img id="finished-art" /></a>
+
+      <p>Click or drag your art to your desktop to save!<br />
+        <button role="button" class="text-button" id="save-imgur">Or upload to imgur.com!</button>
+      </p>
+      <p id="link-imgur"></p>
+    </div>
+  </section>
+
+  <section id="open-modal-container" class="modal hidden">
+    <div id="open-modal" class="inside-modal">
+      <div class="controls">
+        <button role="button" class="ui-hider">
+          <img src="assets/draggybits/hider.png" alt="move controls window">
+        </button>
+      </div>
+
+      <h2>you have some locally saved art!</h2>
+      <h3>wanna open one? click a thumbnail...</h3>
+
+      <ul class="gallery"> </ul>
+    </div>
+  </section>
+
+  <section id="pxon-modal-container" class="modal hidden">
+    <div id="open-modal-pxon" class="inside-modal">
+      <div class="controls">
+        <button role="button" class="ui-hider">
+          <img src="assets/draggybits/hider.png" alt="move controls window">
+        </button>
+      
+  </section>
+
+<script type="text/javascript">
+  if('serviceWorker' in navigator) {
+    navigator.serviceWorker
+             .register('service-worker.js')
+             .then(function(reg) {
+               console.log('service worker registered --- ' + reg.scope + ' should work offline now :)');
+             }).catch(function(err) {
+               console.log('service worker failed --- ' + err);
+             });
+  }
+</script>
+  </body>
+</html>
